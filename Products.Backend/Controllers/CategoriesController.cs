@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Net;
-using System.Web;
-using System.Web.Mvc;
-using Products.Backend.Models;
-using Products.Domain;
-
-namespace Products.Backend.Controllers
+﻿namespace Products.Backend.Controllers
 {
+    using System.Data.Entity;
+    using System.Threading.Tasks;
+    using System.Net;
+    using System.Web.Mvc;
+    using Products.Backend.Models;
+    using Products.Domain;
+
+    [Authorize]
     public class CategoriesController : Controller
     {
         private DataContextLocal db = new DataContextLocal();
