@@ -9,7 +9,7 @@
     using Products.Backend.Helpers;
     using System;
 
-    [Authorize(Users ="ffranco@hotmail.com")]
+    [Authorize]
     public class ProductsController : Controller
     {
         private DataContextLocal db = new DataContextLocal();

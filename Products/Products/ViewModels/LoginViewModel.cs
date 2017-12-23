@@ -166,7 +166,7 @@
             }
 
             var response = await apiService.GetToken(
-                "http://productszuluapi.azurewebsites.net",
+                "http://ffrancoweb.com/ProductsApi",
                 Email,
                 Password);
 
