@@ -1,10 +1,12 @@
-﻿namespace Products.ViewModels
+namespace Products.ViewModels
 {
     using System;
     using System.ComponentModel;
     using System.Windows.Input;
     using GalaSoft.MvvmLight.Command;
+    using Views;
     using Services;
+    using Xamarin.Forms;
 
     public class LoginViewModel : INotifyPropertyChanged
     {
@@ -15,6 +17,7 @@
         #region Services
         ApiService apiService;
         DialogService dialogService;
+        //Updated upstream;
         #endregion
 
         #region Attributes
@@ -166,7 +169,7 @@
             }
 
             var response = await apiService.GetToken(
-                "http://ffrancoweb.com/ProductsApi",
+                "http://productsapi.azurewebsites.net",
                 Email,
                 Password);
 
@@ -176,7 +179,7 @@
                 IsEnabled = true;
                 await dialogService.ShowMessage(
                     "Error", 
-                    "The service is not available,please try latter.");
+                    "The service is not available, please try latter.");
                 Password = null;
                 return;
             }
@@ -192,7 +195,15 @@
                 return;
             }
 
-            await dialogService.ShowMessage("Taraaaan!!!", "Welcome to my App !!!");
+            var mainViewModel = MainViewModel.GetInstance();
+            mainViewModel.Token = response;
+            mainViewModel.Categories = new CategoriesViewModel();
+
+            await Application.Current.MainPage.Navigation.PushAsync(
+                new CategoriesView());
+
+            Email = null;
+            Password = null;
 
             IsRunning = false;
             IsEnabled = true;
