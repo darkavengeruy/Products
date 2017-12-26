@@ -27,6 +27,5 @@ namespace Products.ViewModels
             
         }
         #endregion
-
     }
 }
