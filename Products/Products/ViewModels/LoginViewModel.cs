@@ -124,6 +124,9 @@ namespace Products.ViewModels
             apiService = new ApiService();
             dialogService = new DialogService();
 
+            Email = "ffranco@hotmail.com";
+            Password = "123456";
+
             IsEnabled = true;
             IsToggled = true;
         }
