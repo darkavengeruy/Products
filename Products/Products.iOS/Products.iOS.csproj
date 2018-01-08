@@ -147,6 +147,84 @@
       <Name>Products</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\aguardiente-antioqueno.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\aguardiente-antioqueno-sin-azucar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\avena-canela.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\baby-doll-con-tanga.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cinta-metrica-8mt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\disolvente-universal-039-garrafa-5-litros.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\fabuloso-1lt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\frutillas_premium_bandeja_500_grs_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Isapre nueva mas vida.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\kiwi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mantequilla_rama.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\manzana-roja.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Martillo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\nueva cuenta hotmail.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\nueva cuenta hotmail1.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\platano-amarillo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\queso-colanta.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\queso-de-sandwich.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ron medellin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\switch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tanga_tigre.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tqla jose cuervo blanco.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tqla jose cuervo dorado.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\vino-concha-y-toro-CS.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\yogurt-alpina.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_add_circle.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

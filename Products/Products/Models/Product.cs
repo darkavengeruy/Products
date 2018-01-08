@@ -27,7 +27,7 @@
                 {
                     return string.Format(
                         "https://productsbackend.azurewebsites.net/{0}", 
-                        Image.Substring(1)); 
+                        Image.Substring(2)); 
                 }
             }
     }
