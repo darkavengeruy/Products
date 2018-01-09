@@ -1,12 +1,9 @@
 namespace Products.ViewModels
 {
-    using System;
     using System.ComponentModel;
     using System.Windows.Input;
     using GalaSoft.MvvmLight.Command;
-    using Views;
     using Services;
-    using Xamarin.Forms;
 
     public class LoginViewModel : INotifyPropertyChanged
     {
@@ -17,6 +14,7 @@ namespace Products.ViewModels
         #region Services
         ApiService apiService;
         DialogService dialogService;
+        NavigationService navigationService;
         //Updated upstream;
         #endregion
 
@@ -123,6 +121,7 @@ namespace Products.ViewModels
         {
             apiService = new ApiService();
             dialogService = new DialogService();
+            navigationService = new NavigationService();
 
             Email = "ffranco@hotmail.com";
             Password = "123456";
@@ -202,8 +201,9 @@ namespace Products.ViewModels
             mainViewModel.Token = response;
             mainViewModel.Categories = new CategoriesViewModel();
 
-            await Application.Current.MainPage.Navigation.PushAsync(
-                new CategoriesView());
+            await navigationService.Navigate("CategoriesView");
+
+
 
             Email = null;
             Password = null;
