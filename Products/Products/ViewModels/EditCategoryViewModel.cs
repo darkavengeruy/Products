@@ -7,7 +7,7 @@
     using Services;
     using Models;
 
-    public class NewCategoryViewModel : INotifyPropertyChanged
+    public class EditCategoryViewModel: INotifyPropertyChanged
     {
         #region Events
         public event PropertyChangedEventHandler PropertyChanged;
@@ -23,6 +23,7 @@
         #region Attributes
         bool _isRunning;
         bool _isEnabled;
+        Category category;
         #endregion
 
         #region Propierties
@@ -69,11 +70,14 @@
         #endregion
 
         #region Constructors
-        public NewCategoryViewModel()
+        public EditCategoryViewModel(Category category)
         {
+            this.category = category;
             apiService = new ApiService();
             dialogService = new DialogService();
             navigationService = new NavigationService();
+
+            Description = category.Description;
 
             IsEnabled = true;
         }
@@ -110,14 +114,10 @@
                 return;
             }
 
-            var category = new Category
-            {
-                Description = Description,
-            };
-
+            category.Description = Description;
             var mainViewModel = MainViewModel.GetInstance();
 
-            var response = await apiService.Post(
+            var response = await apiService.Put(
                 "http://productsapi.azurewebsites.net",
                 "/api",
                 "/Categories",
@@ -135,9 +135,8 @@
                 return;
             }
 
-            category = (Category)response.Result;
             var categoriesViewModel = CategoriesViewModel.GetInstance();
-            categoriesViewModel.AddCategory(category);
+            categoriesViewModel.UpdateCategory(category);
 
             await navigationService.Back();
 
@@ -148,4 +147,3 @@
         #endregion
     }
 }
-

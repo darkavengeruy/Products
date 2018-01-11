@@ -64,6 +64,10 @@
       <DependentUpon>NewCategoryView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\NewCategoryViewModel.cs" />
+    <Compile Include="Views\EditCategoryView.xaml.cs">
+      <DependentUpon>EditCategoryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\EditCategoryViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">
@@ -83,6 +87,10 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\NewCategoryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EditCategoryView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
