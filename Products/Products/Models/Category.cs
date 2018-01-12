@@ -52,7 +52,6 @@ namespace Products.Models
             {
                 return new RelayCommand(Delete); 
             }
-
         }
 
         async void Delete()

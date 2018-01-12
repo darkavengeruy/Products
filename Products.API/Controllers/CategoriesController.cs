@@ -143,6 +143,7 @@
             {
                 return NotFound();
             }
+
             db.Categories.Remove(category);
             try
             {
@@ -152,7 +153,7 @@
             {
                 if (ex.InnerException != null &&
                     ex.InnerException.InnerException != null &&
-                    ex.InnerException.InnerException.Message.Contains("Index"))
+                    ex.InnerException.InnerException.Message.Contains("REFERENCE"))
                 {
                     return BadRequest("You can't delete this record, because it has related records.");
                 }

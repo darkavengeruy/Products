@@ -39,7 +39,6 @@
                 Message = "Ok",
             };
         }
-
         public async Task<TokenResponse> GetToken(string urlBase,
                                                   string username,
                                                   string password)
@@ -62,7 +61,6 @@
                 return null;
             }
         }
-
         public async Task<Response> Get<T>(
             string urlBase, string servicePrefix, string controller,
             string tokenType, string accessToken, int id)
@@ -128,7 +126,6 @@
                         Message = response.StatusCode.ToString(),
                     };
                 }
-
 
                 var list = JsonConvert.DeserializeObject<List<T>>(result);
                 return new Response
@@ -347,7 +344,6 @@
                     controller, 
                     model.GetHashCode());
                 var response = await client.DeleteAsync(url);
-
                 var result = await response.Content.ReadAsStringAsync();
 
                 if (!response.IsSuccessStatusCode)
@@ -360,7 +356,6 @@
                 return new Response
                 {
                     IsSuccess = true,
-
                 };
             }
             catch (Exception ex)
@@ -373,5 +368,4 @@
             }
         }
     }
-
 }

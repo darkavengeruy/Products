@@ -102,7 +102,6 @@
                 categories.OrderBy(c => c.Description));
             IsRefreshing = false; 
         }
-
         public void UpdateCategory(Category category)
         {
             IsRefreshing = true;
@@ -114,11 +113,9 @@
                 categories.OrderBy(c => c.Description));
             IsRefreshing = false;
         }
-
         public async Task DeleteCategory(Category category)
         {
             IsRefreshing = true;
-
             var connection = await apiService.CheckConnection();
             if (!connection.IsSuccess)
             {
