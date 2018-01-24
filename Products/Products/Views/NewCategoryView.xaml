@@ -12,14 +12,17 @@
             <Label
                 Text="Category:">
             </Label>
+            
             <Entry
                 Text="{Binding Description, Mode=TwoWay}"
                 Placeholder="Enter category description...">
             </Entry>
+            
             <ActivityIndicator
                 IsRunning="{Binding IsRunning, Mode=TwoWay}"
                 VerticalOptions="CenterAndExpand">
             </ActivityIndicator>
+            
             <Button
                 Command="{Binding SaveCommand}"
                 BackgroundColor="Navy"

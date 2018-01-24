@@ -2198,8 +2198,26 @@ namespace Products.Droid
 			// aapt resource value: 0x7f020055
 			public const int avd_hide_password = 2130837589;
 			
+			// aapt resource value: 0x7f020125
+			public const int avd_hide_password_1 = 2130837797;
+			
+			// aapt resource value: 0x7f020126
+			public const int avd_hide_password_2 = 2130837798;
+			
+			// aapt resource value: 0x7f020127
+			public const int avd_hide_password_3 = 2130837799;
+			
 			// aapt resource value: 0x7f020056
 			public const int avd_show_password = 2130837590;
+			
+			// aapt resource value: 0x7f020128
+			public const int avd_show_password_1 = 2130837800;
+			
+			// aapt resource value: 0x7f020129
+			public const int avd_show_password_2 = 2130837801;
+			
+			// aapt resource value: 0x7f02012a
+			public const int avd_show_password_3 = 2130837802;
 			
 			// aapt resource value: 0x7f020057
 			public const int avena_canela = 2130837591;
@@ -2757,64 +2775,67 @@ namespace Products.Droid
 			public const int navigation_empty_icon = 2130837775;
 			
 			// aapt resource value: 0x7f020110
-			public const int notification_action_background = 2130837776;
+			public const int noimage = 2130837776;
 			
 			// aapt resource value: 0x7f020111
-			public const int notification_bg = 2130837777;
+			public const int notification_action_background = 2130837777;
 			
 			// aapt resource value: 0x7f020112
-			public const int notification_bg_low = 2130837778;
+			public const int notification_bg = 2130837778;
 			
 			// aapt resource value: 0x7f020113
-			public const int notification_bg_low_normal = 2130837779;
+			public const int notification_bg_low = 2130837779;
 			
 			// aapt resource value: 0x7f020114
-			public const int notification_bg_low_pressed = 2130837780;
+			public const int notification_bg_low_normal = 2130837780;
 			
 			// aapt resource value: 0x7f020115
-			public const int notification_bg_normal = 2130837781;
+			public const int notification_bg_low_pressed = 2130837781;
 			
 			// aapt resource value: 0x7f020116
-			public const int notification_bg_normal_pressed = 2130837782;
+			public const int notification_bg_normal = 2130837782;
 			
 			// aapt resource value: 0x7f020117
-			public const int notification_icon_background = 2130837783;
-			
-			// aapt resource value: 0x7f020122
-			public const int notification_template_icon_bg = 2130837794;
-			
-			// aapt resource value: 0x7f020123
-			public const int notification_template_icon_low_bg = 2130837795;
+			public const int notification_bg_normal_pressed = 2130837783;
 			
 			// aapt resource value: 0x7f020118
-			public const int notification_tile_bg = 2130837784;
+			public const int notification_icon_background = 2130837784;
+			
+			// aapt resource value: 0x7f020123
+			public const int notification_template_icon_bg = 2130837795;
+			
+			// aapt resource value: 0x7f020124
+			public const int notification_template_icon_low_bg = 2130837796;
 			
 			// aapt resource value: 0x7f020119
-			public const int notify_panel_notification_icon_bg = 2130837785;
+			public const int notification_tile_bg = 2130837785;
 			
 			// aapt resource value: 0x7f02011a
-			public const int platano_amarillo = 2130837786;
+			public const int notify_panel_notification_icon_bg = 2130837786;
 			
 			// aapt resource value: 0x7f02011b
-			public const int queso_colanta = 2130837787;
+			public const int platano_amarillo = 2130837787;
 			
 			// aapt resource value: 0x7f02011c
-			public const int queso_de_sandwich = 2130837788;
+			public const int queso_colanta = 2130837788;
 			
 			// aapt resource value: 0x7f02011d
-			public const int ron_medellin = 2130837789;
+			public const int queso_de_sandwich = 2130837789;
 			
 			// aapt resource value: 0x7f02011e
-			public const int tqla_jose_cuervo_blanco = 2130837790;
+			public const int ron_medellin = 2130837790;
 			
 			// aapt resource value: 0x7f02011f
-			public const int tqla_jose_cuervo_dorado = 2130837791;
+			public const int tqla_jose_cuervo_blanco = 2130837791;
 			
 			// aapt resource value: 0x7f020120
-			public const int vino_concha_y_toro_CS = 2130837792;
+			public const int tqla_jose_cuervo_dorado = 2130837792;
 			
 			// aapt resource value: 0x7f020121
-			public const int yogurt_alpina = 2130837793;
+			public const int vino_concha_y_toro_CS = 2130837793;
+			
+			// aapt resource value: 0x7f020122
+			public const int yogurt_alpina = 2130837794;
 			
 			static Drawable()
 			{

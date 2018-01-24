@@ -1,4 +1,5 @@
-﻿namespace Products.ViewModels
+﻿
+namespace Products.ViewModels
 {
     using System;
     using System.ComponentModel;
@@ -7,9 +8,8 @@
     using Services;
     using Models;
 
-    public class NewCategoryViewModel : INotifyPropertyChanged
+    public class EditProductViewModel: INotifyPropertyChanged
     {
-        
         #region Events
         public event PropertyChangedEventHandler PropertyChanged;
         #endregion
@@ -18,11 +18,13 @@
         ApiService apiService;
         DialogService dialogService;
         NavigationService navigationService;
+        //Updated upstream;
         #endregion
 
         #region Attributes
         bool _isRunning;
         bool _isEnabled;
+        Product product;
         #endregion
 
         #region Propierties
@@ -66,14 +68,61 @@
             get;
             set;
         }
+
+        public string Price
+        {
+            get;
+            set;    
+        }
+
+        public bool IsActive
+        {
+            get;
+            set;
+        }
+
+        public DateTime LastPurchase
+        {
+            get;
+            set;
+        }
+
+        public string Stock
+        {
+            get;
+            set;
+    
+        }
+
+        public string Remarks
+        {
+            get;
+            set;
+        }
+
+        public string Image
+        {
+            get;
+            set;
+        }
         #endregion
 
         #region Constructors
-        public NewCategoryViewModel()
+        public EditProductViewModel(Product product)
         {
+            this.product = product;
             apiService = new ApiService();
             dialogService = new DialogService();
             navigationService = new NavigationService();
+
+
+            Description = product.Description;
+            Image = product.ImageFullPath;
+            Price = product.Precio.ToString();
+            IsActive = product.IsActive;
+            LastPurchase = product.LastPurchase;
+            Stock = product.Stock.ToString();
+            Remarks = product.Remarks;  
 
             IsEnabled = true;
         }
@@ -94,7 +143,39 @@
             {
                 await dialogService.ShowMessage(
                     "Error",
-                    "You must enter a category description.");
+                    "You must enter a product description.");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(Price))
+            {
+                await dialogService.ShowMessage(
+                    "Error",
+                    "You must enter a product price.");
+                return;
+            }
+            var price = decimal.Parse(Price);
+            if (price < 0)
+            {
+                await dialogService.ShowMessage(
+                    "Error",
+                    "The price must be a value greather or equals than zero");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(Stock))
+            {
+                await dialogService.ShowMessage(
+                    "Error",
+                    "You must enter a product stock.");
+                return;
+            }
+            var stock = double.Parse(Stock);
+            if (stock < 0)
+            {
+                await dialogService.ShowMessage(
+                "Error",
+                "The stock must must be a value greather or equals thn zero.");
                 return;
             }
 
@@ -109,21 +190,24 @@
                 await dialogService.ShowMessage("Error", connection.Message);
                 return;
             }
-
-            var category = new Category
-            {
-                Description = Description,
-            };
-
             var mainViewModel = MainViewModel.GetInstance();
+
+
+            product.Description = Description;
+            product.IsActive = IsActive;
+            product.LastPurchase = LastPurchase;
+            product.Precio = price;
+            product.Remarks = Remarks;
+            product.Stock = stock;
+
 
             var response = await apiService.Post(
                 "http://productsapi.azurewebsites.net",
                 "/api",
-                "/Categories",
+                "/Products",
                 mainViewModel.Token.TokenType,
                 mainViewModel.Token.AccessToken,
-                category);
+                product);
 
             if (!response.IsSuccess)
             {
@@ -135,17 +219,13 @@
                 return;
             }
 
-            category = (Category)response.Result;
-            var categoriesViewModel = CategoriesViewModel.GetInstance();
-            categoriesViewModel.AddCategory(category);
+            ProductsViewModel.GetInstance().Update(product);
 
             await navigationService.Back();
 
             IsRunning = false;
             IsEnabled = true;
-
         }
         #endregion
     }
 }
-

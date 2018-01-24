@@ -48,6 +48,25 @@
             get;
             set;
         }
+
+        public NewProductViewModel NewProduct
+        {
+            get;
+            set;
+        }
+
+        public Category Category
+        {
+            get;
+            set;
+        }
+
+        public EditProductViewModel EditProduct
+        {
+            get;
+            set;
+        }
+
         #endregion
 
         #region Constructors
@@ -89,6 +108,20 @@
         {
             NewCategory = new NewCategoryViewModel();
             await navigationService.Navigate("NewCategoryView");
+        }
+
+        public ICommand NewProductCommand
+        {
+            get
+            {
+                return new RelayCommand(GoNewProduct);
+            }
+        }
+
+        async private void GoNewProduct()
+        {
+            NewProduct = new NewProductViewModel();
+            await navigationService.Navigate("NewProductView");
         }
         #endregion
     }

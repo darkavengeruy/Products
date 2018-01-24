@@ -1,7 +1,6 @@
 ﻿
 namespace Products.Models
 {
-    using System;
     using System.Collections.Generic;
     using System.Windows.Input;
     using GalaSoft.MvvmLight.Command;
@@ -46,6 +45,14 @@ namespace Products.Models
                 return new RelayCommand(Edit);
             }
         }
+        async void Edit()
+        {
+            MainViewModel.GetInstance().EditCategory =
+                new EditCategoryViewModel(this);
+            await navigationService.Navigate("EditCategoryView");
+        }
+
+
         public ICommand DeleteCommand
         {
             get
@@ -53,7 +60,6 @@ namespace Products.Models
                 return new RelayCommand(Delete); 
             }
         }
-
         async void Delete()
         {
             var response = await dialogService.ShowConfirm(
@@ -63,14 +69,7 @@ namespace Products.Models
             {
                 return;
             }
-            CategoriesViewModel.GetInstance().DeleteCategory(this);
-        }
-
-        async void Edit()
-        {
-            MainViewModel.GetInstance().EditCategory = 
-                new EditCategoryViewModel(this);
-            await navigationService.Navigate("EditategoryView");
+            await CategoriesViewModel.GetInstance().DeleteCategory(this);
         }
 
         public ICommand SelectCategoryCommand
@@ -80,14 +79,12 @@ namespace Products.Models
                 return new RelayCommand(SelectCategory);
             }
         }
-
         async void SelectCategory()
         {
             var mainViewModel = MainViewModel.GetInstance();
+            mainViewModel.Category = this;
             mainViewModel.Products = new ProductsViewModel(Products);
-
             await navigationService.Navigate("ProductsView");
-
         }
         #endregion
     }
