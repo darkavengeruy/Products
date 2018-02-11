@@ -22,7 +22,7 @@
 
         public string Image { get; set; }
 
-        public decimal Precio { get; set; }
+        public decimal Price { get; set; }
 
         public bool IsActive { get; set; }
 

@@ -18,7 +18,7 @@
 
         [Required(ErrorMessage = "The field {0} is required.")]
         [DisplayFormat(DataFormatString ="{0:C2}", ApplyFormatInEditMode =false)]
-        public decimal Precio { get; set; }
+        public decimal Price { get; set; }
 
         [Display(Name ="Is Active?")]
         public bool IsActive { get; set; }

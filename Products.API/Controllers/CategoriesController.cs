@@ -34,6 +34,7 @@
                         Image = products.Image,
                         IsActive = products.IsActive,
                         LastPurchase = products.LastPurchase,
+                        Price = products.Price,
                         ProductId = products.ProductId,
                         Remarks = products.Remarks,
                         Stock = products.Stock,
@@ -145,6 +146,7 @@
             }
 
             db.Categories.Remove(category);
+
             try
             {
                 await db.SaveChangesAsync();

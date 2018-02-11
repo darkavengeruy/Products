@@ -118,7 +118,7 @@ namespace Products.ViewModels
 
             Description = product.Description;
             Image = product.ImageFullPath;
-            Price = product.Precio.ToString();
+            Price = product.Price.ToString();
             IsActive = product.IsActive;
             LastPurchase = product.LastPurchase;
             Stock = product.Stock.ToString();
@@ -196,7 +196,7 @@ namespace Products.ViewModels
             product.Description = Description;
             product.IsActive = IsActive;
             product.LastPurchase = LastPurchase;
-            product.Precio = price;
+            product.Price = price;
             product.Remarks = Remarks;
             product.Stock = stock;
 

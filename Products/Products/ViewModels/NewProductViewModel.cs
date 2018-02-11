@@ -86,7 +86,7 @@
             get;
             set;
         }
-        public string Precio
+        public string Price
         {
             get;
             set;
@@ -153,7 +153,7 @@
                 return;
             }
 
-            if (string.IsNullOrEmpty(Precio))
+            if (string.IsNullOrEmpty(Price))
             {
                 await dialogService.ShowMessage(
                     "Error",
@@ -161,7 +161,7 @@
                 return;
             }
 
-            var price = decimal.Parse(Precio);
+            var price = decimal.Parse(Price);
             if (price < 0)
             {
                 await dialogService.ShowMessage(
@@ -206,7 +206,7 @@
                 Description = Description,
                 IsActive = IsActive,
                 LastPurchase = LastPurchase,
-                Precio = price,
+                Price = price,
                 Remarks = Remarks,
                 Stock = stock,
             };

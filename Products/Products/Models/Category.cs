@@ -1,5 +1,4 @@
-﻿
-namespace Products.Models
+﻿namespace Products.Models
 {
     using System.Collections.Generic;
     using System.Windows.Input;
@@ -79,6 +78,7 @@ namespace Products.Models
                 return new RelayCommand(SelectCategory);
             }
         }
+
         async void SelectCategory()
         {
             var mainViewModel = MainViewModel.GetInstance();

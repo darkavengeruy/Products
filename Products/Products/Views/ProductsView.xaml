@@ -38,19 +38,19 @@
                             <ColumnDefinition Width="Auto"/>          
                         </Grid.ColumnDefinitions>
                             <Image
-                            Grid.Column="0"
-                            HeightRequest="100"
-                            HorizontalOptions="Start"
-                            Source="{Binding ImageFullPath}"
-                            WidthRequest="100">
-                        </Image>
-                        <Label 
-                            Grid.Column="1"
-                            HorizontalOptions="CenterAndExpand"
-                            FontSize="Medium"
-                            Text="{Binding Description}"
-                            VerticalOptions="Center">
-                        </Label>
+                                Grid.Column="0"
+                                HeightRequest="100"
+                                HorizontalOptions="Start"
+                                Source="{Binding ImageFullPath}"
+                                WidthRequest="100">
+                            </Image>
+                            <Label 
+                                Grid.Column="1"
+                                HorizontalOptions="CenterAndExpand"
+                                FontSize="Medium"
+                                Text="{Binding Description}"
+                                VerticalOptions="Center">
+                            </Label>
                       </Grid>
                     </ViewCell>
                   </DataTemplate>
